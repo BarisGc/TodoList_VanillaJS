@@ -1,0 +1,44 @@
+
+#TodoListRows li.customUnChecked:nth-child(odd)  {
+    background-color: #F6F6F6;
+    }
+
+#TodoListRows li.customUnChecked:nth-child(even)  {
+background-color: #EAE9E9;
+}
+
+#TodoListRows li.customUnChecked:hover  {
+background-color: #D4D7DD;
+}
+
+#TodoListRows .customUnChecked .btn-close:hover  {
+    background-color: #EE6F57 ;
+    }
+
+#TodoListRows .customChecked .btn-close:hover  {
+    background-color: #D8EBE4!important ;
+    }
+
+#TodoListRows .customChecked  {
+    background-color: #007580!important;
+    }
+
+#TodoListRows .customChecked a span{
+    background-color: #007580!important;
+    color: white!important;
+    text-decoration:line-through!important;
+    }
+
+    
+#TodoListRows .customUnChecked a {
+    text-decoration: none;
+    }
+
+#TodoListRows .customUnChecked a span {
+    color: black;
+    }
+
+.buttonColorGray {
+    background-color: gray!important;
+    
+}

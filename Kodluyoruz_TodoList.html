@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="Kodluyoruz_TodoList.css">
+    <title>TodoList Uygulaması</title>
+
+</head>
+
+<body>
+
+
+
+    <!-- Page Container1 Starts -->
+
+    <!-- Page Row1 Starts -->
+    <!-- Toast starts -->
+    <!-- Toast ends -->
+    <!-- Header Starts -->
+    <!-- Header Ends -->
+    <!-- Sections start -->
+    <!-- Sections end -->
+    <!-- Page Row1 ends -->
+
+    <!-- Page Row2 Starts -->
+    <!-- section3 (List) starts -->
+    <!-- section3 (List) ends -->
+    <!-- Page Row2 ends -->
+
+    <!-- Page Container1 ends -->
+
+    <!-- Page Container2 (LocalStorage Dummy) Starts -->
+    <!-- Page Container2 (LocalStorage Dummy) Ends -->
+
+
+    <!-- Page Container1 Starts -->
+    <div class="container">
+        <!-- Page Row1 Starts -->
+        <div class="row bg-warning">
+            <div class="col-12">
+                <!-- Toast starts -->
+                <div class="position-fixed top-0 start-50 p-3  col-2 offset-2 " style="z-index: 11">
+                    <div id="TodoToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <strong class="me-auto">Uyarı Bildirimi</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            Hello, world! This is a toast message.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Toast ends -->
+
+
+            <!-- Header Starts -->
+            <header class="col-12 bg-warning">
+                <div class="col-12 d-flex">
+                    <img class="mx-auto bg-white mt-4"
+                        src="https://cdn.sanity.io/images/9kdepi1d/production/65c832d202a503b15d99e628f4313782f3ef50db-300x62.png"
+                        class="mb-1" alt="TodoList Logo" />
+                </div>
+                <div class="col-4 offset-4 d-flex mt-2">
+                    <p class="mx-auto text-white fs-3">Yapılacaklar Listesi</p>
+                </div>
+            </header>
+            <!-- Header ends -->
+            <!-- Section1 (UserId Selection) starts -->
+            <section class="col-3 offset-1 px-0">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Kullanıcı İsmi Girin"
+                        aria-label="Kullanıcı İsmi Girin" aria-describedby="todolistUserIdInputFilterButton"
+                        id="todolistUserIdInput">
+                </div>
+            </section>
+            <!-- section1 (UserId Selection) ends -->
+            <!-- section2 (ListItem Selection) starts -->
+            <section class="col-10 offset-1 px-0 my-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Getirmek İstediğiniz Listeyi Girin"
+                        aria-label="Listeden Ara ve Getir" aria-describedby="todoSearchGetButton" id="todoSearchInput">
+                </div>
+            </section>
+            <!-- section2 (ListItem Selection) ends -->
+            <!-- Section3 (Filter Operations) Starts -->
+            <section class="col-4 offset-1 px-0">
+
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="searchTamEslesmeSwitch" />
+                    <label class="form-check-label" for="searchTamEslesmeSwitch"><i><b>Sadece Tam
+                                Eşleşmeler</b></i></label>
+                </div>
+                <div class="form-check form-switch mt-2">
+                    <input class="form-check-input" type="checkbox" role="switch" id="searchTamamlananlarSwitch" />
+                    <label class="form-check-label" for="searchTamamlananlarSwitch"><i><b>Tamamlananları
+                                Getirme</b></i></label>
+                </div>
+                <button class="btn btn-secondary ms-0 buttonColorGray mt-3" type="button"
+                    id="todolistFilterButton">Filtrele
+                </button>
+            </section>
+            <!-- Section3 (Filter Operations) Ends -->
+            <!-- Section4 (Adding) starts -->
+            <section class="col-10 offset-1 px-0 mt-4 mb-3">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Bugün Ne Yapacaksın?"
+                        aria-label="Bugün Ne Yapacaksın?" aria-describedby="todolistListInputEkleButton"
+                        id="todolistListInput">
+                    <button class="btn btn-secondary col-1 buttonColorGray" type="button"
+                        id="todolistListInputEkleButton">Ekle</button>
+                </div>
+            </section>
+            <!-- section4 (Adding) ends -->
+
+        </div>
+        <!-- Page Row1 ends -->
+        <!-- Page Row2 Starts -->
+        <div class="row">
+            <!-- section3 (List) starts -->
+            <section class="col-12 px-0" id="TodoListRows">
+                <ul class="list-group p-0" id="TodoListRowsDomUl">
+                </ul>
+            </section>
+            <!-- section3 (List) ends -->
+        </div>
+        <!-- Page Row2 ends -->
+    </div>
+    <!-- Page Container1 ends -->
+
+    <!-- Page Container2 (LocalStorage Dummy) Starts -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-4 offset-2">
+                <button type="button" class="btn btn-success" id="LocalStorageDemoButton">Test İçin LocalStorage'a
+                    Dummy Key-Value Yerleştir</button>
+            </div>
+            <div class="col-5 offset-1">
+                <button type="button" class="btn btn-danger" id="todolistButtonTemizle">Test İçin LocalStorage'ı
+                    Temizle</button>
+            </div>
+        </div>
+    </div>
+    <!-- Page Container2 (LocalStorage Dummy) Ends -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
+    <script src="Kodluyoruz_TodoList.js"></script>
+</body>
+
+</html>
