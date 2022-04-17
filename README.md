@@ -1,4 +1,4 @@
-# Project Name: *TodoList_VanillaJS* (One Of The My First Projects)
+# Project Name: *TodoList_VanillaJS* (One Of The My First Projects, I Just Deployed to Show My Vanilla knowledge)
 ### Project Deployment:
 Please, click > [Netlify](https://todo-app-vanillajs-barisd.netlify.app/)
 ### Project Main Goal: 
